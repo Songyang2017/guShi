@@ -5,7 +5,8 @@
     "pages/myprofile/main",
     "pages/collections/main",
     "pages/logs/main",
-    "pages/counter/main"
+    "pages/counter/main",
+    "pages/doc/main"
   ],
   "window": {
     "backgroundTextStyle": "dark",
@@ -20,6 +21,10 @@
       {
         "pagePath": "pages/index/main",
         "text": "首页"
+      },
+      {
+        "pagePath": "pages/doc/main",
+        "text": "文库"
       },
       {
         "pagePath": "pages/collections/main",

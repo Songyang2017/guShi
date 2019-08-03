@@ -93,9 +93,6 @@ export default {
     ...mapState(['userInfo'])
   },
   mounted () {
-    wx.cloud.database().collection('ci').where({ tags: ['宋词三百首'] }).get().then(res => {
-      console.log('cid', res)
-    })
   },
   methods: {
     ...mapMutations(['changeOrg', 'getUserInfo', 'getTipCollect']),
