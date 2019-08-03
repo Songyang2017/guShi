@@ -93,7 +93,7 @@ export default {
     ...mapState(['userInfo'])
   },
   mounted () {
-    wx.cloud.database().collection('ci').limit(10).get().then(res => {
+    wx.cloud.database().collection('ci').where({ tags: ['宋词三百首'] }).get().then(res => {
       console.log('cid', res)
     })
   },
