@@ -94,7 +94,7 @@ export default {
   },
   mounted () {
     wx.cloud.database().collection('ci').limit(10).get().then(res => {
-      console.log('ci', res)
+      console.log('cid', res)
     })
   },
   methods: {
