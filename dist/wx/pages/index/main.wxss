@@ -1,0 +1,86 @@
+@import "../../common/vendor.wxss";
+
+.wrapper.data-v-14667ed0 {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "KT";
+}
+.wrapper .tips.data-v-14667ed0 {
+  position: absolute;
+  bottom: 8vh;
+  font-size: 26rpx;
+  color: #adadad;
+  z-index: 1;
+  font-family: "KT";
+}
+.wrapper .cards.data-v-14667ed0 {
+  padding: 40rpx;
+  position: relative;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 65%;
+  height: 65vh;
+  box-shadow: 0rpx 0rpx 50rpx -10rpx rgba(0, 0, 0, 0.5);
+}
+.wrapper .cards .bg.data-v-14667ed0 {
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: -1;
+  width: 48vw;
+  height: 62.6vw;
+}
+.wrapper .cards .bg ._img.data-v-14667ed0 {
+  width: 100%;
+  height: 100%;
+}
+.wrapper .cards .see-all.data-v-14667ed0 {
+  font-size: 30rpx;
+  width: 100%;
+  line-height: 100rpx;
+  position: absolute;
+  bottom: 40rpx;
+  left: 0;
+}
+.wrapper .cards .see-all .icon-jinru.data-v-14667ed0 {
+  font-size: 30rpx;
+  margin-left: 2rpx;
+  vertical-align: top;
+}
+.wrapper .cards .text.data-v-14667ed0 {
+  text-align: center;
+}
+.wrapper .cards .text .content.data-v-14667ed0 {
+  margin-bottom: 20rpx;
+}
+.wrapper .cards .text .tip.data-v-14667ed0 {
+  font-size: 28rpx;
+  margin-bottom: 12rpx;
+}
+.wrapper .cards .text .user-btn.data-v-14667ed0 {
+  font-size: 28rpx;
+  width: 240rpx;
+  margin: 30rpx auto;
+}
+.wrapper .cards .text .collect-tip.data-v-14667ed0 {
+  text-align: center;
+  font-size: 0;
+}
+.wrapper .cards .text .collect-tip .icon-shoucang.data-v-14667ed0 {
+  font-size: 70rpx;
+}
+.wrapper .catx.data-v-14667ed0 {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.wrapper .catx .can.data-v-14667ed0 {
+  z-index: 1000;
+  width: 600rpx;
+  height: 900rpx;
+}

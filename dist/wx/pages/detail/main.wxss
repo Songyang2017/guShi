@@ -1,0 +1,16 @@
+@import "../../common/vendor.wxss";
+
+.wrapper.data-v-1d936461 {
+  padding: 60rpx 40rpx;
+  font-family: "KT";
+}
+.wrapper ._div.data-v-1d936461 {
+  text-align: center;
+}
+.wrapper .aut.data-v-1d936461 {
+  margin: 40rpx 0;
+  font-size: 28rpx;
+}
+.wrapper .con.data-v-1d936461 {
+  line-height: 60rpx;
+}

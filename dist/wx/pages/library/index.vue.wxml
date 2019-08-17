@@ -1,0 +1,10 @@
+<template name="70485d88">
+  <view class="_div data-v-db48e2fe">
+    <van-tabs active="{{active}}" bind:change="onChange" class="_van-tabs data-v-db48e2fe">
+      <van-tab title="唐诗" class="_van-tab data-v-db48e2fe">内容 1</van-tab>
+      <van-tab title="宋词" class="_van-tab data-v-db48e2fe">内容 2</van-tab>
+      <van-tab title="论语" class="_van-tab data-v-db48e2fe">内容 3</van-tab>
+      <van-tab title="古文" class="_van-tab data-v-db48e2fe">内容 4</van-tab>
+    </van-tabs>
+  </view>
+</template>

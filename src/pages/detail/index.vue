@@ -16,6 +16,12 @@ import '@/asset/less/index.less'
 export default {
   computed: {
     ...mapState(['origin'])
+  },
+  onShow () {
+    let _this = this
+    wx.setNavigationBarTitle({
+      title: `${_this.origin.title}-${_this.origin.author}`
+    })
   }
 }
 </script>

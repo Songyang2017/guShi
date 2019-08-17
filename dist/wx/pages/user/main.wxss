@@ -1,0 +1,18 @@
+@import "../../common/vendor.wxss";
+
+.avatar-wrapper.data-v-522bb09b {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.avatar-wrapper .get-user-btn.data-v-522bb09b {
+  width: 100vw;
+  position: absolute;
+  left: 0;
+  opacity: 0;
+}
+.avatar-wrapper .avatar.data-v-522bb09b {
+  border-radius: 50%;
+  width: 14vw;
+  height: 14vw;
+}

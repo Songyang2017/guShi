@@ -1,0 +1,9 @@
+<template name="d65884e8">
+  <view class="_div data-v-1d936461 wrapper">
+    <view class="_div data-v-1d936461 title">{{origin.title}}</view>
+    <view class="_div data-v-1d936461 aut">{{origin.dynasty}} - {{origin.author}}</view>
+    <view class="_div data-v-1d936461 con">
+      <view wx:key="index" key="{{index}}" wx:for="{{origin.content}}" wx:for-index="index" wx:for-item="its" class="_div data-v-1d936461">{{its}}</view>
+    </view>
+  </view>
+</template>

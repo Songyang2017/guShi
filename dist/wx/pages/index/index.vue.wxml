@@ -1,0 +1,17 @@
+<template name="be8f155a">
+  <view class="_div data-v-14667ed0 wrapper">
+    <view class="_div data-v-14667ed0 cards">
+      <view class="_div data-v-14667ed0 bg">
+        <image src="/asset/ying.png" alt class="_img data-v-14667ed0"></image>
+      </view>
+      <view class="_div data-v-14667ed0 text" wx:if="{{data}}">
+        <view class="_div data-v-14667ed0 content">{{data.content}}</view>
+        <view class="_div data-v-14667ed0 tip">{{data.origin.title}}</view>
+        <view class="_div data-v-14667ed0 tip">{{data.origin.dynasty}} - {{data.origin.author}}</view>
+        <view class="_div data-v-14667ed0 see-all" hover-class="none" bindtap="handleProxy" data-eventid="{{'0'}}" data-comkey="{{$k}}">查看全部</view>
+      </view>
+    </view>
+    <view class="_div data-v-14667ed0 tips" hover-class="none">下拉即可刷新</view>
+    <van-dialog id="van-dialog" bindgetuserinfo="handleProxy" data-eventid="{{'1'}}" data-comkey="{{$k}}" class="_van-dialog data-v-14667ed0"></van-dialog>
+  </view>
+</template>

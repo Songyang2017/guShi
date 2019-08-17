@@ -1,0 +1,8 @@
+{
+  "backgroundColor": "#f8f8f8",
+  "usingComponents": {
+    "van-dialog": "/static/vant/dialog/index",
+    "van-cell": "/static/vant/cell/index",
+    "van-cell-group": "/static/vant/cell-group/index"
+  }
+}

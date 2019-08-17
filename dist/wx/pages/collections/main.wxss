@@ -1,0 +1,24 @@
+@import "../../common/vendor.wxss";
+
+.wrapper .box.data-v-38c0cd4a {
+  width: 88%;
+  margin: 20rpx auto;
+  padding: 30rpx;
+  border-radius: 10rpx;
+  box-shadow: 0rpx 0rpx 15rpx -3rpx rgba(0, 0, 0, 0.5);
+  margin-bottom: 24rpx;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.wrapper .box .box-l ._p.data-v-38c0cd4a {
+  font-size: 30rpx;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  overflow: hidden;
+}
+.wrapper .box .box-r .icon-iconfontshanchu1.data-v-38c0cd4a {
+  font-size: 40rpx;
+  color: #c5c5c5;
+}

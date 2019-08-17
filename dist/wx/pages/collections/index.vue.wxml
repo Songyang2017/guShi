@@ -1,0 +1,11 @@
+<template name="42667816">
+  <view class="_div data-v-38c0cd4a wrapper">
+    <view class="_div data-v-38c0cd4a box" wx:key="index" key="{{index}}" bindtap="handleProxy" data-eventid="{{'1_'+index}}" data-comkey="{{$k}}" wx:for="{{list}}" wx:for-index="index" wx:for-item="its">
+      <view class="_div data-v-38c0cd4a box-l">
+        <view class="_p data-v-38c0cd4a">{{its.description.origin.title}}</view>
+        <view class="_p data-v-38c0cd4a">{{its.description.origin.author}}</view>
+      </view>
+      <view class="_div data-v-38c0cd4a box-r" catchtap="handleProxy" data-eventid="{{'0_'+index}}" data-comkey="{{$k}}"><label class="_span data-v-38c0cd4a icon-iconfontshanchu1 iconfont"></label></view>
+    </view>
+  </view>
+</template>

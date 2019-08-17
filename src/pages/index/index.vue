@@ -7,33 +7,13 @@
           alt=""
         >
       </div>
-      <div class="text">
+      <div
+        class="text"
+        v-if="data"
+      >
         <div class="content">{{data.content}}</div>
         <div class="tip">{{data.origin.title}}</div>
         <div class="tip">{{data.origin.dynasty}} - {{data.origin.author}}</div>
-        <button
-          class="user-btn"
-          open-type="getUserInfo"
-          bindgetuserinfo="bindGetUserInfo"
-          v-if="!userInfo && canIUse"
-        >点击授权</button>
-        <div
-          v-else
-          class="user-box"
-        >
-          <img
-            mode="cover"
-            :src="userInfo.avatarUrl||userPng"
-          />
-          <p>{{userInfo.nickName}}</p>
-        </div>
-        <div
-          @click="toInsert(data)"
-          class="collect-tip"
-        ><span
-            :style="[collectFlag ? 'color:rgb(255, 49, 42)' : 'color:#c5c5c5']"
-            class="icon-shoucang iconfont"
-          ></span></div>
         <div
           class="see-all"
           hover-class="none"
@@ -45,29 +25,32 @@
       class="tips"
       hover-class="none"
     >下拉即可刷新</div>
+    <van-dialog
+      id="van-dialog"
+      @getuserinfo="GetUserInfoHandler"
+    />
   </div>
 </template>
 
 <script>
 import shiCi from '@/utils/jinrishici'
-import { mapMutations, mapState } from 'vuex'
+import { mapMutations } from 'vuex'
 import cover from '@/asset/blank.png'
 import '@/asset/icon/iconfont.css'
 import '@/asset/less/index.less'
-import userPng from '@/asset/user.png'
+import mixins from '@/utils/mixins'
 
 export default {
   data () {
     return {
       data: {},
       flag: false,
-      userPng: userPng,
-      canIUse: wx.canIUse('button.open-type.getUserInfo'),
       db: wx.cloud.database(),
       collectFlag: false,
       collectRes: {}
     }
   },
+  mixins: [mixins],
   onPullDownRefresh () {
     this.getData()
   },
@@ -79,43 +62,11 @@ export default {
       imageUrl: cover
     }
   },
-  bindGetUserInfo (e) {
-    console.log(e, 123)
-    this.getUserInfo(e.detail.userInfo)
-  },
   created () {
     this.getData()
-    if (!this.userInfo) {
-      this._getUserInfo()
-    }
-  },
-  computed: {
-    ...mapState(['userInfo'])
-  },
-  mounted () {
-    wx.cloud.database().collection('ci').where({ tags: ['宋词三百首'] }).get().then(res => {
-      console.log('cid', res)
-    })
   },
   methods: {
-    ...mapMutations(['changeOrg', 'getUserInfo', 'getTipCollect']),
-    _getUserInfo () {
-      // 查看是否授权
-      wx.getSetting({
-        lang: 'zh_CN',
-        success: res => {
-          if (res.authSetting['scope.userInfo']) {
-            // 已经授权，可以直接调用 getUserInfo 获取头像昵称
-            wx.getUserInfo({
-              success: res => {
-                console.log(res.userInfo)
-                this.getUserInfo(res.userInfo)
-              }
-            })
-          }
-        }
-      })
-    },
+    ...mapMutations(['changeOrg', 'getTipCollect']),
     toInsert (data) {
       if (!this.collectFlag) {
         this.db.collection('collection').add({
@@ -129,7 +80,7 @@ export default {
           }
         })
           .then(res => {
-            console.log(res)
+            // console.log(res)
             this.collectRes = res
             wx.showToast({
               title: '收藏成功！',
@@ -173,10 +124,6 @@ export default {
         url: '/pages/detail/main'
       })
       this.changeOrg(this.data.origin)
-    },
-    clickHandle (ev) {
-      console.log('clickHandle:', ev)
-      // throw {message: 'custom test'}
     }
   }
 }
@@ -246,17 +193,6 @@ export default {
         font-size: 14px;
         width: 120px;
         margin: 15px auto;
-      }
-      .user-box {
-        margin: 15px auto;
-        img {
-          border-radius: 50%;
-          width: 14vw;
-          height: 14vw;
-        }
-        p {
-          font-size: 14px;
-        }
       }
       .collect-tip {
         text-align: center;
