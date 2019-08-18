@@ -1,5 +1,6 @@
 {
   "enablePullDownRefresh": true,
+  "backgroundColor": "#f0f3f5",
   "usingComponents": {
     "van-dialog": "/static/vant/dialog/index"
   }

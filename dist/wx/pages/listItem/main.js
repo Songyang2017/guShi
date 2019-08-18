@@ -47,8 +47,15 @@ var getDataList = function getDataList(pageSize, pageNo, name, queryObj) {
 var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return (_vm.list.length) ? _c('div', _vm._l((_vm.list), function(its, index) {
     return _c('div', {
-      key: its._id
-    }, [_c('p', [_vm._v(_vm._s(its.title || its.rhythmic || its.chapter))]), _vm._v(" "), (its.author) ? _c('p', [_vm._v(_vm._s(its.author))]) : _vm._e()], 1)
+      key: its._id,
+      staticClass: "card"
+    }, [_c('p', {
+      staticClass: "title"
+    }, [_vm._v(_vm._s(its.title || its.rhythmic || its.chapter))]), _vm._v(" "), (its.author) ? _c('p', {
+      staticClass: "author"
+    }, [_vm._v(_vm._s(its.author))]) : _vm._e(), _vm._v(" "), _c('p', {
+      staticClass: "p-content"
+    }, [_vm._v(_vm._s(its.paragraphs[0] || its.content[0]) + _vm._s(its.paragraphs[1] || its.content[1]) + _vm._s(its.paragraphs[2] || its.content[2]))])], 1)
   })) : _vm._e()
 }
 var staticRenderFns = []
@@ -64,14 +71,14 @@ if (false) {
 
 /***/ }),
 
-/***/ 96:
+/***/ 95:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue__ = __webpack_require__(2);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__index__ = __webpack_require__(97);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__index__ = __webpack_require__(96);
 
 
 
@@ -80,7 +87,7 @@ app.$mount();
 
 /***/ }),
 
-/***/ 97:
+/***/ 96:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -89,7 +96,7 @@ app.$mount();
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(98)
+  __webpack_require__(97)
 }
 var normalizeComponent = __webpack_require__(3)
 /* script */
@@ -134,7 +141,7 @@ if (false) {(function () {
 
 /***/ }),
 
-/***/ 98:
+/***/ 97:
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
@@ -162,36 +169,62 @@ if (false) {(function () {
 //
 //
 //
-//
 
 
+
+var PAGE_SIZE = 10;
 /* harmony default export */ __webpack_exports__["a"] = ({
   data: function data() {
     return {
-      list: []
+      list: [],
+      pageIndex: 0,
+      total: 0
     };
   },
   onLoad: function onLoad() {
-    this.list.length = 0;
+    this.initData();
+  },
+  onReachBottom: function onReachBottom() {
+    this.pageIndex++;
+    if (this.total !== 0 && this.total > this.list.length) {
+      this._getDataList();
+    } else {
+      wx.showToast({
+        title: '到底啦！',
+        icon: 'none',
+        duration: 2000
+      });
+    }
   },
   onShow: function onShow() {
-    console.log(this.$root.$mp.query);
     this._getDataList();
-
     wx.setNavigationBarTitle({
       title: this.$root.$mp.query.text
     });
   },
 
   methods: {
+    // 初始化
+    initData: function initData() {
+      this.list.length = 0;
+      this.pageIndex = 0;
+      this.total = 0;
+    },
+
+    // 获取数据
     _getDataList: function _getDataList() {
       var _this = this;
 
-      __WEBPACK_IMPORTED_MODULE_0__api_getData__["a" /* getDataList */](10, 1, this.$root.$mp.query.id).then(function (res) {
-        var data = res.list.data;
+      wx.showLoading({
+        title: '玩命加载中'
+      });
+      __WEBPACK_IMPORTED_MODULE_0__api_getData__["a" /* getDataList */](PAGE_SIZE, this.pageIndex, this.$root.$mp.query.id).then(function (res) {
+        var data = res.list.data,
+            total = res.total;
 
-
-        _this.list = data;
+        _this.total = total;
+        _this.list = _this.list.concat(data);
+        wx.hideLoading();
       });
     }
   }
@@ -199,4 +232,4 @@ if (false) {(function () {
 
 /***/ })
 
-},[96]);
+},[95]);

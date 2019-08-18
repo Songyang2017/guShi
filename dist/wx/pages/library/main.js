@@ -22,8 +22,8 @@ app.$mount();
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_mpvue_loader_2_0_1_mpvue_loader_lib_selector_type_script_index_0_index_vue__ = __webpack_require__(90);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_mpvue_loader_2_0_1_mpvue_loader_lib_template_compiler_index_id_data_v_db48e2fe_hasScoped_true_transformToRequire_video_src_source_src_img_src_image_xlink_href_fileExt_template_wxml_script_js_style_wxss_platform_wx_node_modules_mpvue_loader_2_0_1_mpvue_loader_lib_selector_type_template_index_0_index_vue__ = __webpack_require__(95);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_mpvue_loader_2_0_1_mpvue_loader_lib_selector_type_script_index_0_index_vue__ = __webpack_require__(89);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_mpvue_loader_2_0_1_mpvue_loader_lib_template_compiler_index_id_data_v_db48e2fe_hasScoped_true_transformToRequire_video_src_source_src_img_src_image_xlink_href_fileExt_template_wxml_script_js_style_wxss_platform_wx_node_modules_mpvue_loader_2_0_1_mpvue_loader_lib_selector_type_template_index_0_index_vue__ = __webpack_require__(94);
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
@@ -79,17 +79,17 @@ if (false) {(function () {
 
 /***/ }),
 
-/***/ 90:
+/***/ 89:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__asset_img_songci_jpg__ = __webpack_require__(91);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__asset_img_songci_jpg__ = __webpack_require__(90);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__asset_img_songci_jpg___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__asset_img_songci_jpg__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__asset_img_shijing_jpg__ = __webpack_require__(92);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__asset_img_shijing_jpg__ = __webpack_require__(91);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__asset_img_shijing_jpg___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__asset_img_shijing_jpg__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__asset_img_lunyu_jpg__ = __webpack_require__(93);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__asset_img_lunyu_jpg__ = __webpack_require__(92);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__asset_img_lunyu_jpg___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2__asset_img_lunyu_jpg__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__asset_img_tangshi_jpg__ = __webpack_require__(94);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__asset_img_tangshi_jpg__ = __webpack_require__(93);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__asset_img_tangshi_jpg___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3__asset_img_tangshi_jpg__);
 //
 //
@@ -138,7 +138,11 @@ if (false) {(function () {
       }]
     };
   },
-  mounted: function mounted() {},
+  onLoad: function onLoad() {
+    wx.setNavigationBarTitle({
+      title: '文库'
+    });
+  },
 
   methods: {
     goList: function goList(id, text) {
@@ -151,35 +155,35 @@ if (false) {(function () {
 
 /***/ }),
 
-/***/ 91:
+/***/ 90:
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__.p + "img/songci.jpg";
 
 /***/ }),
 
-/***/ 92:
+/***/ 91:
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__.p + "img/shijing.jpg";
 
 /***/ }),
 
-/***/ 93:
+/***/ 92:
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__.p + "img/lunyu.jpg";
 
 /***/ }),
 
-/***/ 94:
+/***/ 93:
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__.p + "img/tangshi.jpg";
 
 /***/ }),
 
-/***/ 95:
+/***/ 94:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";

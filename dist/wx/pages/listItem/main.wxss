@@ -1,0 +1,22 @@
+
+.card.data-v-0cac13a1 {
+  margin: 0 36rpx 36rpx;
+  padding: 30rpx;
+  box-shadow: 0rpx 0rpx 23rpx -10rpx rgba(0, 0, 0, 0.5);
+}
+.card .title.data-v-0cac13a1 {
+  font-size: 32rpx;
+  margin-bottom: 16rpx;
+}
+.card .author.data-v-0cac13a1 {
+  font-size: 26rpx;
+  margin-bottom: 20rpx;
+  color: rgba(69, 90, 100, 0.6);
+}
+.card .p-content.data-v-0cac13a1 {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  overflow: hidden;
+  font-size: 32rpx;
+}

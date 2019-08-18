@@ -139,7 +139,12 @@ if (false) {(function () {
 
 
 /* harmony default export */ __webpack_exports__["a"] = ({
-  mixins: [__WEBPACK_IMPORTED_MODULE_0__utils_mixins__["a" /* default */]]
+  mixins: [__WEBPACK_IMPORTED_MODULE_0__utils_mixins__["a" /* default */]],
+  onLoad: function onLoad() {
+    wx.setNavigationBarTitle({
+      title: '用户'
+    });
+  }
 });
 
 /***/ }),

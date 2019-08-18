@@ -53,7 +53,12 @@
 <script>
 import mixins from '@/utils/mixins'
 export default {
-  mixins: [mixins]
+  mixins: [mixins],
+  onLoad () {
+    wx.setNavigationBarTitle({
+      title: '用户'
+    })
+  }
 }
 </script>
 <style lang="less" scoped>

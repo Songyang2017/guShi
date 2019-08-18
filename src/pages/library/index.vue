@@ -50,7 +50,10 @@ export default {
       ]
     }
   },
-  mounted () {
+  onLoad () {
+    wx.setNavigationBarTitle({
+      title: '文库'
+    })
   },
   methods: {
     goList (id, text) {
@@ -83,7 +86,6 @@ export default {
       position: absolute;
       bottom: 0;
       font-size: 15px;
-
       width: 34vw;
       text-align: center;
       background: rgba(0, 0, 0, 0.5);

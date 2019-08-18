@@ -129,9 +129,6 @@ export default {
 </script>
 
 <style scoped lang="less">
-page {
-  background: #f0f3f5;
-}
 .wrapper {
   width: 100vw;
   height: 100vh;
