@@ -12,7 +12,6 @@
 </template>
 <script>
 import { mapState } from 'vuex'
-import '@/asset/less/index.less'
 export default {
   computed: {
     ...mapState(['origin'])

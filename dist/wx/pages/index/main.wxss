@@ -1,5 +1,7 @@
-@import "../../common/vendor.wxss";
 
+page.data-v-14667ed0 {
+  background: #f0f3f5;
+}
 .wrapper.data-v-14667ed0 {
   width: 100vw;
   height: 100vh;
@@ -20,10 +22,11 @@
   padding: 40rpx;
   position: relative;
   z-index: 10;
+  background: #fff;
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 65%;
+  width: 65vw;
   height: 65vh;
   box-shadow: 0rpx 0rpx 50rpx -10rpx rgba(0, 0, 0, 0.5);
 }
@@ -56,7 +59,8 @@
   text-align: center;
 }
 .wrapper .cards .text .content.data-v-14667ed0 {
-  margin-bottom: 20rpx;
+  margin-bottom: 60rpx;
+  font-family: "jianti";
 }
 .wrapper .cards .text .tip.data-v-14667ed0 {
   font-size: 28rpx;

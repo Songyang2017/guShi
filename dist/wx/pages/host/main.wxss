@@ -1,17 +1,16 @@
-@import "../../common/vendor.wxss";
 
-.avatar-wrapper.data-v-522bb09b {
+.avatar-wrapper.data-v-95466b90 {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
-.avatar-wrapper .get-user-btn.data-v-522bb09b {
+.avatar-wrapper .get-user-btn.data-v-95466b90 {
   width: 100vw;
   position: absolute;
   left: 0;
   opacity: 0;
 }
-.avatar-wrapper .avatar.data-v-522bb09b {
+.avatar-wrapper .avatar.data-v-95466b90 {
   border-radius: 50%;
   width: 14vw;
   height: 14vw;

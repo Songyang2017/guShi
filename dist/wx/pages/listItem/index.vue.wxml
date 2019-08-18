@@ -1,0 +1,8 @@
+<template name="4be99ecc">
+  <view wx:if="{{list.length}}" class="_div data-v-0cac13a1">
+    <view wx:key="its._id" key="{{its._id}}" wx:for="{{list}}" wx:for-index="index" wx:for-item="its" class="_div data-v-0cac13a1">
+      <view class="_p data-v-0cac13a1">{{its.title || its.rhythmic || its.chapter}}</view>
+      <view wx:if="{{its.author}}" class="_p data-v-0cac13a1">{{its.author}}</view>
+    </view>
+  </view>
+</template>

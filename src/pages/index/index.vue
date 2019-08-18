@@ -36,7 +36,6 @@
 import shiCi from '@/utils/jinrishici'
 import { mapMutations } from 'vuex'
 import cover from '@/asset/blank.png'
-import '@/asset/icon/iconfont.css'
 import '@/asset/less/index.less'
 import mixins from '@/utils/mixins'
 
@@ -130,6 +129,9 @@ export default {
 </script>
 
 <style scoped lang="less">
+page {
+  background: #f0f3f5;
+}
 .wrapper {
   width: 100vw;
   height: 100vh;
@@ -149,6 +151,7 @@ export default {
     padding: 20px;
     position: relative;
     z-index: 10;
+    background: #fff;
     .bg {
       position: absolute;
       top: 0;
@@ -177,13 +180,14 @@ export default {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 65%;
+    width: 65vw;
     height: 65vh;
     box-shadow: 0rpx 0rpx 50rpx -10rpx rgba(0, 0, 0, 0.5);
     .text {
       text-align: center;
       .content {
-        margin-bottom: 10px;
+        margin-bottom: 30px;
+        font-family: "jianti";
       }
       .tip {
         font-size: 14px;

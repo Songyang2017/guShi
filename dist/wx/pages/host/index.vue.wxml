@@ -1,0 +1,16 @@
+<template name="fa091d3a">
+  <view class="_div data-v-95466b90">
+    <van-cell class="_van-cell data-v-95466b90">
+      <view class="_div data-v-95466b90 avatar-wrapper" slot="title" wx:if="{{userInfo}}">
+        <image class="_img data-v-95466b90 avatar" mode="cover" src="{{userInfo.avatarUrl}}"></image> <label class="_span data-v-95466b90">{{userInfo.nickName}}</label>
+      </view>
+      <view class="_div data-v-95466b90 avatar-wrapper" slot="title" wx:else>
+        <image class="_img data-v-95466b90 avatar" mode="cover" src="{{userDefault}}"></image> <button class="_button data-v-95466b90 get-user-btn" open-type="getUserInfo" bindgetuserinfo="GetUserInfoHandler">123</button> <label class="_span data-v-95466b90">未授权</label>
+      </view>
+    </van-cell>
+    <van-cell title="收藏" url="/pages/collections/main" is-link class="_van-cell data-v-95466b90"></van-cell>
+    <van-cell title="关于" is-link class="_van-cell data-v-95466b90"></van-cell>
+    <van-cell title="打赏" is-link class="_van-cell data-v-95466b90"></van-cell>
+    <van-dialog id="van-dialog" bindgetuserinfo="handleProxy" data-eventid="{{'0'}}" data-comkey="{{$k}}" class="_van-dialog data-v-95466b90"></van-dialog>
+  </view>
+</template>

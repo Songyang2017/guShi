@@ -4,8 +4,9 @@
     "pages/detail/main",
     "pages/collections/main",
     "pages/logs/main",
-    "pages/user/main",
-    "pages/library/main"
+    "pages/host/main",
+    "pages/library/main",
+    "pages/listItem/main"
   ],
   "window": {
     "backgroundTextStyle": "dark",
@@ -15,7 +16,7 @@
   },
   "tabBar": {
     "selectedColor": "#d43c33",
-    "borderStyle": "#f5f5f5",
+    "borderStyle": "black",
     "list": [
       {
         "pagePath": "pages/index/main",
@@ -26,7 +27,7 @@
         "text": "文库"
       },
       {
-        "pagePath": "pages/user/main",
+        "pagePath": "pages/host/main",
         "text": "用户"
       }
     ]

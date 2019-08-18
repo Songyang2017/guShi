@@ -1,1 +1,30 @@
-@import "../../common/vendor.wxss";
+
+.list-wrapper.data-v-db48e2fe {
+  display: grid;
+  grid-template-columns: 50% 50%;
+}
+.list-wrapper .cover-its.data-v-db48e2fe {
+  position: relative;
+  width: 34vw;
+  height: 34vw;
+  border-radius: 16rpx;
+  margin: 0 auto 40rpx;
+  overflow: hidden;
+}
+.list-wrapper .cover-its ._img.data-v-db48e2fe {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+.list-wrapper .cover-its ._div.data-v-db48e2fe {
+  position: absolute;
+  bottom: 0;
+  font-size: 30rpx;
+  width: 34vw;
+  text-align: center;
+  background: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  padding: 8rpx 0;
+}
