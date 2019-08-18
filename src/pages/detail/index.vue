@@ -1,7 +1,14 @@
 <template>
   <div class="wrapper">
     <div class="title">{{origin.title}}</div>
-    <div class="aut">{{origin.dynasty}} - {{origin.author}}</div>
+    <div
+      class="aut"
+      v-if="origin.dynasty"
+    >{{origin.dynasty}} - {{origin.author}}</div>
+    <div
+      class="aut"
+      v-else
+    >{{origin.author}}</div>
     <div class="con">
       <div
         v-for="(its, index) in origin.content"

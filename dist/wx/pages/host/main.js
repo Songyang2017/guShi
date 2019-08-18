@@ -1,15 +1,15 @@
 require("../../common/manifest.js")
 require("../../common/vendor.js")
-global.webpackJsonpMpvue([6],{
+global.webpackJsonpMpvue([7],{
 
-/***/ 71:
+/***/ 74:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue__ = __webpack_require__(2);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__index__ = __webpack_require__(72);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__index__ = __webpack_require__(75);
 
 
 
@@ -18,16 +18,16 @@ app.$mount();
 
 /***/ }),
 
-/***/ 72:
+/***/ 75:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_mpvue_loader_2_0_1_mpvue_loader_lib_selector_type_script_index_0_index_vue__ = __webpack_require__(74);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_mpvue_loader_2_0_1_mpvue_loader_lib_template_compiler_index_id_data_v_95466b90_hasScoped_true_transformToRequire_video_src_source_src_img_src_image_xlink_href_fileExt_template_wxml_script_js_style_wxss_platform_wx_node_modules_mpvue_loader_2_0_1_mpvue_loader_lib_selector_type_template_index_0_index_vue__ = __webpack_require__(77);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_mpvue_loader_2_0_1_mpvue_loader_lib_selector_type_script_index_0_index_vue__ = __webpack_require__(77);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_mpvue_loader_2_0_1_mpvue_loader_lib_template_compiler_index_id_data_v_95466b90_hasScoped_true_transformToRequire_video_src_source_src_img_src_image_xlink_href_fileExt_template_wxml_script_js_style_wxss_platform_wx_node_modules_mpvue_loader_2_0_1_mpvue_loader_lib_selector_type_template_index_0_index_vue__ = __webpack_require__(79);
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(73)
+  __webpack_require__(76)
 }
 var normalizeComponent = __webpack_require__(3)
 /* script */
@@ -72,18 +72,20 @@ if (false) {(function () {
 
 /***/ }),
 
-/***/ 73:
+/***/ 76:
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
 
 /***/ }),
 
-/***/ 74:
+/***/ 77:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__utils_mixins__ = __webpack_require__(35);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__utils_mixins__ = __webpack_require__(36);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__asset_user_png__ = __webpack_require__(37);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__asset_user_png___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__asset_user_png__);
 //
 //
 //
@@ -136,10 +138,16 @@ if (false) {(function () {
 //
 //
 //
+
 
 
 /* harmony default export */ __webpack_exports__["a"] = ({
   mixins: [__WEBPACK_IMPORTED_MODULE_0__utils_mixins__["a" /* default */]],
+  data: function data() {
+    return {
+      userDefault: __WEBPACK_IMPORTED_MODULE_1__asset_user_png___default.a
+    };
+  },
   onLoad: function onLoad() {
     wx.setNavigationBarTitle({
       title: '用户'
@@ -149,7 +157,7 @@ if (false) {(function () {
 
 /***/ }),
 
-/***/ 77:
+/***/ 79:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -182,30 +190,17 @@ var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._sel
       "open-type": "getUserInfo",
       "bindgetuserinfo": "GetUserInfoHandler"
     }
-  }, [_vm._v("123")]), _vm._v(" "), _c('span', [_vm._v("未授权")])], 1)]), _vm._v(" "), _c('van-cell', {
-    attrs: {
-      "title": "收藏",
-      "url": "/pages/collections/main",
-      "is-link": "",
-      "mpcomid": '1'
-    }
-  }), _vm._v(" "), _c('van-cell', {
+  }, [_vm._v("去授权")]), _vm._v(" "), _c('span', [_vm._v("去授权")])], 1)]), _vm._v(" "), _c('van-cell', {
     attrs: {
       "title": "关于",
       "is-link": "",
-      "mpcomid": '2'
-    }
-  }), _vm._v(" "), _c('van-cell', {
-    attrs: {
-      "title": "打赏",
-      "is-link": "",
-      "mpcomid": '3'
+      "mpcomid": '1'
     }
   }), _vm._v(" "), _c('van-dialog', {
     attrs: {
       "id": "van-dialog",
       "eventid": '0',
-      "mpcomid": '4'
+      "mpcomid": '2'
     },
     on: {
       "getuserinfo": _vm.GetUserInfoHandler
@@ -225,4 +220,4 @@ if (false) {
 
 /***/ })
 
-},[71]);
+},[74]);

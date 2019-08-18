@@ -1,0 +1,17 @@
+
+.tip.data-v-116b1d13 {
+  margin: 30rpx 0 30rpx;
+  padding: 0 20rpx;
+  font-size: 30rpx;
+}
+.hot-keys.data-v-116b1d13 {
+  padding: 0 20rpx;
+}
+.hot-keys .tit.data-v-116b1d13 {
+  display: inline-block;
+  font-size: 30rpx;
+  padding: 10rpx 20rpx;
+  color: #333;
+  background: #f0f3f5;
+  margin: 0 20rpx 20rpx 0;
+}

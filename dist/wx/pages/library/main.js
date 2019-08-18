@@ -2,14 +2,62 @@ require("../../common/manifest.js")
 require("../../common/vendor.js")
 global.webpackJsonpMpvue([2],{
 
-/***/ 86:
+/***/ 100:
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "img/tangshi.jpg";
+
+/***/ }),
+
+/***/ 101:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('div', [_c('div', {
+    staticClass: "list-wrapper"
+  }, _vm._l((_vm.list), function(its, index) {
+    return _c('div', {
+      key: its.id,
+      staticClass: "cover-its",
+      attrs: {
+        "eventid": '0_' + index
+      },
+      on: {
+        "click": function($event) {
+          _vm.goList(its.id, its.text)
+        }
+      }
+    }, [_c('img', {
+      attrs: {
+        "mode": "cover",
+        "src": its.pic,
+        "alt": ""
+      }
+    }), _vm._v(" "), _c('div', [_vm._v(_vm._s(its.text))])])
+  }))])
+}
+var staticRenderFns = []
+render._withStripped = true
+var esExports = { render: render, staticRenderFns: staticRenderFns }
+/* harmony default export */ __webpack_exports__["a"] = (esExports);
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+     require("vue-loader/node_modules/vue-hot-reload-api").rerender("data-v-db48e2fe", esExports)
+  }
+}
+
+/***/ }),
+
+/***/ 93:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue__ = __webpack_require__(2);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__index__ = __webpack_require__(87);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__index__ = __webpack_require__(94);
 
 
 
@@ -18,16 +66,16 @@ app.$mount();
 
 /***/ }),
 
-/***/ 87:
+/***/ 94:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_mpvue_loader_2_0_1_mpvue_loader_lib_selector_type_script_index_0_index_vue__ = __webpack_require__(89);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_mpvue_loader_2_0_1_mpvue_loader_lib_template_compiler_index_id_data_v_db48e2fe_hasScoped_true_transformToRequire_video_src_source_src_img_src_image_xlink_href_fileExt_template_wxml_script_js_style_wxss_platform_wx_node_modules_mpvue_loader_2_0_1_mpvue_loader_lib_selector_type_template_index_0_index_vue__ = __webpack_require__(94);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_mpvue_loader_2_0_1_mpvue_loader_lib_selector_type_script_index_0_index_vue__ = __webpack_require__(96);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_mpvue_loader_2_0_1_mpvue_loader_lib_template_compiler_index_id_data_v_db48e2fe_hasScoped_true_transformToRequire_video_src_source_src_img_src_image_xlink_href_fileExt_template_wxml_script_js_style_wxss_platform_wx_node_modules_mpvue_loader_2_0_1_mpvue_loader_lib_selector_type_template_index_0_index_vue__ = __webpack_require__(101);
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(88)
+  __webpack_require__(95)
 }
 var normalizeComponent = __webpack_require__(3)
 /* script */
@@ -72,24 +120,24 @@ if (false) {(function () {
 
 /***/ }),
 
-/***/ 88:
+/***/ 95:
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
 
 /***/ }),
 
-/***/ 89:
+/***/ 96:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__asset_img_songci_jpg__ = __webpack_require__(90);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__asset_img_songci_jpg__ = __webpack_require__(97);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__asset_img_songci_jpg___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__asset_img_songci_jpg__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__asset_img_shijing_jpg__ = __webpack_require__(91);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__asset_img_shijing_jpg__ = __webpack_require__(98);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__asset_img_shijing_jpg___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__asset_img_shijing_jpg__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__asset_img_lunyu_jpg__ = __webpack_require__(92);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__asset_img_lunyu_jpg__ = __webpack_require__(99);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__asset_img_lunyu_jpg___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2__asset_img_lunyu_jpg__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__asset_img_tangshi_jpg__ = __webpack_require__(93);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__asset_img_tangshi_jpg__ = __webpack_require__(100);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__asset_img_tangshi_jpg___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3__asset_img_tangshi_jpg__);
 //
 //
@@ -155,73 +203,25 @@ if (false) {(function () {
 
 /***/ }),
 
-/***/ 90:
+/***/ 97:
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__.p + "img/songci.jpg";
 
 /***/ }),
 
-/***/ 91:
+/***/ 98:
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__.p + "img/shijing.jpg";
 
 /***/ }),
 
-/***/ 92:
+/***/ 99:
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__.p + "img/lunyu.jpg";
 
-/***/ }),
-
-/***/ 93:
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports = __webpack_require__.p + "img/tangshi.jpg";
-
-/***/ }),
-
-/***/ 94:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('div', [_c('div', {
-    staticClass: "list-wrapper"
-  }, _vm._l((_vm.list), function(its, index) {
-    return _c('div', {
-      key: its.id,
-      staticClass: "cover-its",
-      attrs: {
-        "eventid": '0_' + index
-      },
-      on: {
-        "click": function($event) {
-          _vm.goList(its.id, its.text)
-        }
-      }
-    }, [_c('img', {
-      attrs: {
-        "mode": "cover",
-        "src": its.pic,
-        "alt": ""
-      }
-    }), _vm._v(" "), _c('div', [_vm._v(_vm._s(its.text))])])
-  }))])
-}
-var staticRenderFns = []
-render._withStripped = true
-var esExports = { render: render, staticRenderFns: staticRenderFns }
-/* harmony default export */ __webpack_exports__["a"] = (esExports);
-if (false) {
-  module.hot.accept()
-  if (module.hot.data) {
-     require("vue-loader/node_modules/vue-hot-reload-api").rerender("data-v-db48e2fe", esExports)
-  }
-}
-
 /***/ })
 
-},[86]);
+},[93]);

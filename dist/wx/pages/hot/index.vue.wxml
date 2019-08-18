@@ -1,0 +1,9 @@
+<template name="19f6c3ce">
+  <view class="_div data-v-116b1d13">
+    <van-search value="{{query}}" show-action bindsearch="handleProxy" use-action-slot placeholder="请输入相关诗词的作者" data-eventid="{{'1'}}" data-comkey="{{$k}}" class="_van-search data-v-116b1d13"><label slot="action" bindtap="handleProxy" data-eventid="{{'0'}}" data-comkey="{{$k}}" class="_span data-v-116b1d13">取消</label></van-search>
+    <view class="_p data-v-116b1d13 tip">热门作者</view>
+    <view class="_div data-v-116b1d13 hot-keys">
+      <view class="_div data-v-116b1d13 tit" wx:key="inx" key="{{inx}}" bindtap="handleProxy" data-eventid="{{'2_'+inx}}" data-comkey="{{$k}}" wx:for="{{hotlist}}" wx:for-index="inx" wx:for-item="it">{{it}}</view>
+    </view>
+  </view>
+</template>

@@ -27,23 +27,23 @@
           class="get-user-btn"
           open-type="getUserInfo"
           bindgetuserinfo="GetUserInfoHandler"
-        >123</button>
-        <span>未授权</span>
+        >去授权</button>
+        <span>去授权</span>
       </div>
     </van-cell>
-    <van-cell
+    <!-- <van-cell
       title="收藏"
       url="/pages/collections/main"
       is-link
-    />
+    /> -->
     <van-cell
       title="关于"
       is-link
     />
-    <van-cell
+    <!-- <van-cell
       title="打赏"
       is-link
-    />
+    /> -->
     <van-dialog
       id="van-dialog"
       @getuserinfo="GetUserInfoHandler"
@@ -52,8 +52,14 @@
 </template>
 <script>
 import mixins from '@/utils/mixins'
+import userDefault from '@/asset/user.png'
 export default {
   mixins: [mixins],
+  data () {
+    return {
+      userDefault
+    }
+  },
   onLoad () {
     wx.setNavigationBarTitle({
       title: '用户'

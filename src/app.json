@@ -6,7 +6,8 @@
     "pages/logs/main",
     "pages/host/main",
     "pages/library/main",
-    "pages/listItem/main"
+    "pages/listItem/main",
+    "pages/hot/main"
   ],
   "window": {
     "backgroundTextStyle": "dark",
@@ -21,6 +22,10 @@
       {
         "pagePath": "pages/index/main",
         "text": "推荐"
+      },
+      {
+        "pagePath": "pages/hot/main",
+        "text": "热门"
       },
       {
         "pagePath": "pages/library/main",

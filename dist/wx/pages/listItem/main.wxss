@@ -20,3 +20,22 @@
   overflow: hidden;
   font-size: 32rpx;
 }
+.null-tip.data-v-0cac13a1 {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.null-tip .null-wrapper.data-v-0cac13a1 {
+  text-align: center;
+}
+.null-tip .null-wrapper ._img.data-v-0cac13a1 {
+  width: 45vw;
+  height: 45vw;
+}
+.null-tip .null-wrapper ._p.data-v-0cac13a1 {
+  margin-top: 16rpx;
+  font-size: 28rpx;
+  color: rgba(69, 90, 100, 0.6);
+}

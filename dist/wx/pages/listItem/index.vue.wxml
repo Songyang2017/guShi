@@ -1,9 +1,22 @@
 <template name="4be99ecc">
-  <view wx:if="{{list.length}}" class="_div data-v-0cac13a1">
-    <view wx:key="its._id" key="{{its._id}}" class="_div data-v-0cac13a1 card" wx:for="{{list}}" wx:for-index="index" wx:for-item="its">
-      <view class="_p data-v-0cac13a1 title">{{its.title || its.rhythmic || its.chapter}}</view>
-      <view class="_p data-v-0cac13a1 author" wx:if="{{its.author}}">{{its.author}}</view>
-      <view class="_p data-v-0cac13a1 p-content">{{its.paragraphs[0] || its.content[0]}}{{its.paragraphs[1] || its.content[1]}}{{its.paragraphs[2] || its.content[2]}}</view>
+  <view class="_div data-v-0cac13a1">
+    <view wx:if="{{list.length}}" class="_div data-v-0cac13a1">
+      <view wx:key="its._id" key="{{its._id}}" bindtap="handleProxy" data-eventid="{{'0_'+index}}" data-comkey="{{$k}}" wx:for="{{list}}" wx:for-index="index" wx:for-item="its" class="_div data-v-0cac13a1">
+        <view class="_div data-v-0cac13a1 card">
+          <view class="_p data-v-0cac13a1 title">{{its.title || its.rhythmic || its.chapter}}</view>
+          <view class="_p data-v-0cac13a1 author" wx:if="{{its.author}}">{{its.author}}</view>
+          <view class="_p data-v-0cac13a1 p-content" wx:if="{{its.paragraphs}}">{{its.paragraphs[0]}}{{its.paragraphs[1]}}{{its.paragraphs[2]}}</view>
+          <view wx:else class="_p data-v-0cac13a1 p-content">{{its.content[0]}}</view>
+        </view>
+      </view>
+    </view>
+    <view wx:if="{{isNull}}" class="_div data-v-0cac13a1">
+      <view class="_div data-v-0cac13a1 null-tip">
+        <view class="_div data-v-0cac13a1 null-wrapper">
+          <image mode="cover" src="/asset/img/null.jpg" alt class="_img data-v-0cac13a1"></image>
+          <view class="_p data-v-0cac13a1">该资源还未收录，去看看其他的吧！</view>
+        </view>
+      </view>
     </view>
   </view>
 </template>
