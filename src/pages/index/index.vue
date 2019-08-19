@@ -54,7 +54,6 @@ export default {
     this.getData()
   },
   onShareAppMessage (res) {
-    // console.log(res)
     return {
       title: `${this.data.origin.title} - ${this.data.origin.author}`,
       path: '/pages/index/main',
