@@ -142,8 +142,8 @@ var WIN_HE = wx.getSystemInfoSync().windowHeight;
           y: 0,
           width: _this.winWh,
           height: _this.winHe,
-          destWidth: _this.winWh * 20,
-          destHeight: _this.winHe * 20,
+          destWidth: _this.winWh * 15,
+          destHeight: _this.winHe * 15,
           fileType: 'jpg',
           quality: 1,
           success: function success(res) {

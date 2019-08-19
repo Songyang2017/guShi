@@ -67,8 +67,8 @@ export default {
           y: 0,
           width: this.winWh,
           height: this.winHe,
-          destWidth: this.winWh * 20,
-          destHeight: this.winHe * 20,
+          destWidth: this.winWh * 15,
+          destHeight: this.winHe * 15,
           fileType: 'jpg',
           quality: 1,
           success (res) {
