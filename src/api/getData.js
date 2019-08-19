@@ -25,3 +25,13 @@ export const getDataList = (pageSize, pageNo, name, queryObj) => {
     })
   })
 }
+
+export const getImageinfo = url => {
+  return new Promise((resolve, reject) => {
+    wx.getImageinfo({
+      url: url,
+      success: resolve,
+      file: reject
+    })
+  })
+}

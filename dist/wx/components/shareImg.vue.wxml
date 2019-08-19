@@ -1,0 +1,3 @@
+<template name="2cd18466">
+  <view class="_div data-v-459c784b canvas-box"><canvas canvas-id="my-ctx" class="_canvas data-v-459c784b" style=" {{('width:' + (winWh + 'px') + ';' + 'height:' + (winHe + 'px') + ';')}}"></canvas></view>
+</template>

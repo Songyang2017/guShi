@@ -13,3 +13,6 @@
 .wrapper .con.data-v-1d936461 {
   line-height: 60rpx;
 }
+.canvas-box ._canvas.data-v-459c784b {
+  margin: auto;
+}

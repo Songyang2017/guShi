@@ -1,10 +1,12 @@
-<template name="d65884e8">
-  <view class="_div data-v-1d936461 wrapper">
-    <view class="_div data-v-1d936461 title">{{origin.title}}</view>
-    <view class="_div data-v-1d936461 aut" wx:if="{{origin.dynasty}}">{{origin.dynasty}} - {{origin.author}}</view>
-    <view class="_div data-v-1d936461 aut" wx:else>{{origin.author}}</view>
-    <view class="_div data-v-1d936461 con">
-      <view wx:key="index" key="{{index}}" wx:for="{{origin.content}}" wx:for-index="index" wx:for-item="its" class="_div data-v-1d936461">{{its}}</view>
-    </view>
+<import src="/components/shareImg.vue.wxml" /><template name="d65884e8">
+  <view class="_div data-v-1d936461"><button bindtap="handleProxy" data-eventid="{{'0'}}" data-comkey="{{$k}}" class="_button data-v-1d936461">点击</button>
+    <view class="_div data-v-1d936461 wrapper" wx:if="{{!isShare}}">
+      <view class="_div data-v-1d936461 title">{{origin.title}}</view>
+      <view class="_div data-v-1d936461 aut" wx:if="{{origin.dynasty}}">{{origin.dynasty}} - {{origin.author}}</view>
+      <view class="_div data-v-1d936461 aut" wx:else>{{origin.author}}</view>
+      <view class="_div data-v-1d936461 con">
+        <view wx:key="index" key="{{index}}" wx:for="{{origin.content}}" wx:for-index="index" wx:for-item="its" class="_div data-v-1d936461">{{its}}</view>
+      </view>
+    </view><template wx:else data="{{...$root[$kk+'0'], $root}}" is="2cd18466"></template>
   </view>
 </template>
