@@ -21,10 +21,10 @@
         >{{its}}</div>
       </div>
     </div>
-    <share-img
-      v-else
-      :origin="origin"
-    ></share-img>
+    <div v-else>
+      <share-img :origin="origin"></share-img>
+
+    </div>
   </div>
 </template>
 <script>
@@ -41,6 +41,7 @@ export default {
   },
   components: { shareImg },
   onShow () {
+    this.isShare = false
     let _this = this
     wx.setNavigationBarTitle({
       title: `${_this.origin.title}-${_this.origin.author}`

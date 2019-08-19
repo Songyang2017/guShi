@@ -80,6 +80,7 @@ if (false) {(function () {
 //
 //
 //
+//
 
 
 
@@ -119,6 +120,8 @@ var WIN_HE = wx.getSystemInfoSync().windowHeight;
 
       var ctx = wx.createCanvasContext('my-ctx');
       ctx.setFontSize(this.size.normal);
+      ctx.rect(0, 0, this.winWh, this.winHe);
+      ctx.setFillStyle('white');
       ctx.setTextAlign('center');
       ctx.fillText(this.origin.title, this.winWh / 2, this.line.base);
       ctx.setFontSize(this.size.aut);
@@ -131,7 +134,34 @@ var WIN_HE = wx.getSystemInfoSync().windowHeight;
         console.log(v);
       });
       this.winHe = (4 + _list.length) * this.line.sept;
-      ctx.draw();
+
+      ctx.draw(false, function () {
+        wx.canvasToTempFilePath({
+          canvasId: 'my-ctx',
+          x: 0,
+          y: 0,
+          width: _this.winWh,
+          height: _this.winHe,
+          destWidth: _this.winWh * 20,
+          destHeight: _this.winHe * 20,
+          fileType: 'jpg',
+          quality: 1,
+          success: function success(res) {
+            var tempFilePath = res.tempFilePath;
+
+            wx.saveImageToPhotosAlbum({
+              filePath: tempFilePath,
+              success: function success() {
+                wx.showToast({
+                  icon: 'none',
+                  title: '分享图片已保存至相册',
+                  duration: 2000
+                });
+              }
+            });
+          }
+        });
+      });
     }
   }
 });
@@ -153,7 +183,7 @@ var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._sel
     attrs: {
       "canvas-id": "my-ctx"
     }
-  })])
+  }), _vm._v(" "), _c('div', [_vm._v("保存")])])
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -296,6 +326,7 @@ if (false) {(function () {
 
   components: { shareImg: __WEBPACK_IMPORTED_MODULE_1__components_shareImg__["a" /* default */] },
   onShow: function onShow() {
+    this.isShare = false;
     var _this = this;
     wx.setNavigationBarTitle({
       title: _this.origin.title + '-' + _this.origin.author
@@ -333,12 +364,12 @@ var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._sel
     return _c('div', {
       key: index
     }, [_vm._v(_vm._s(its))])
-  }))]) : _c('share-img', {
+  }))]) : _c('div', [_c('share-img', {
     attrs: {
       "origin": _vm.origin,
       "mpcomid": '0'
     }
-  })], 1)
+  })], 1)], 1)
 }
 var staticRenderFns = []
 render._withStripped = true

@@ -7,6 +7,7 @@
       <view class="_div data-v-1d936461 con">
         <view wx:key="index" key="{{index}}" wx:for="{{origin.content}}" wx:for-index="index" wx:for-item="its" class="_div data-v-1d936461">{{its}}</view>
       </view>
-    </view><template wx:else data="{{...$root[$kk+'0'], $root}}" is="2cd18466"></template>
+    </view>
+    <view wx:else class="_div data-v-1d936461"><template data="{{...$root[$kk+'0'], $root}}" is="2cd18466"></template></view>
   </view>
 </template>

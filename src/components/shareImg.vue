@@ -4,6 +4,7 @@
       canvas-id="my-ctx"
       :style="{width: winWh+'px', height: winHe+'px'}"
     ></canvas>
+    <div>保存</div>
   </div>
 </template>
 <script>
@@ -44,6 +45,8 @@ export default {
     initCanvas () {
       let ctx = wx.createCanvasContext('my-ctx')
       ctx.setFontSize(this.size.normal)
+      ctx.rect(0, 0, this.winWh, this.winHe)
+      ctx.setFillStyle('white')
       ctx.setTextAlign('center')
       ctx.fillText(this.origin.title, this.winWh / 2, this.line.base)
       ctx.setFontSize(this.size.aut)
@@ -56,7 +59,33 @@ export default {
         console.log(v)
       })
       this.winHe = (4 + _list.length) * this.line.sept
-      ctx.draw()
+
+      ctx.draw(false, () => {
+        wx.canvasToTempFilePath({
+          canvasId: 'my-ctx',
+          x: 0,
+          y: 0,
+          width: this.winWh,
+          height: this.winHe,
+          destWidth: this.winWh * 20,
+          destHeight: this.winHe * 20,
+          fileType: 'jpg',
+          quality: 1,
+          success (res) {
+            let { tempFilePath } = res
+            wx.saveImageToPhotosAlbum({
+              filePath: tempFilePath,
+              success () {
+                wx.showToast({
+                  icon: 'none',
+                  title: '分享图片已保存至相册',
+                  duration: 2000
+                })
+              }
+            })
+          }
+        })
+      })
     }
   }
 }
