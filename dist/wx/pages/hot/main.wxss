@@ -1,3 +1,4 @@
+@import "../../common/vendor.wxss";
 
 .tip.data-v-116b1d13 {
   margin: 30rpx 0 30rpx;

@@ -69,10 +69,10 @@ if (false) {(function () {
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_babel_runtime_helpers_extends__ = __webpack_require__(8);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_babel_runtime_helpers_extends___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_babel_runtime_helpers_extends__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__api_getData__ = __webpack_require__(137);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__asset_img_minQr_jpg__ = __webpack_require__(173);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__asset_img_minQr_jpg___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__asset_img_minQr_jpg__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_vuex__ = __webpack_require__(6);
 
-//
 //
 //
 //
@@ -91,7 +91,19 @@ var WIN_HE = wx.getSystemInfoSync().windowHeight;
   props: {
     origin: Object
   },
+  onLoad: function onLoad() {
+    this.$bus.$off('save-ctx');
+    this.initCanvas();
+  },
+
   computed: __WEBPACK_IMPORTED_MODULE_0_babel_runtime_helpers_extends___default()({}, Object(__WEBPACK_IMPORTED_MODULE_2_vuex__["c" /* mapState */])(['userInfo'])),
+  mounted: function mounted() {
+    var _this = this;
+
+    this.$bus.$on('save-ctx', function () {
+      _this.saveCanvas();
+    });
+  },
   data: function data() {
     return {
       winWh: WIN_WH * 0.8,
@@ -100,50 +112,57 @@ var WIN_HE = wx.getSystemInfoSync().windowHeight;
         normal: 13,
         aut: 12
       },
+      ctx: '',
       line: {
         base: 80,
-        sept: 30
+        sept: 27
       }
     };
   },
-  onLoad: function onLoad() {
-    this.initCanvas();
-    // console.log(WIN_WH, WIN_HE, this.userInfo)
-    Object(__WEBPACK_IMPORTED_MODULE_1__api_getData__["b" /* getImageinfo */])(this.userInfo.avatarUrl).then(function (res) {
-      console.log('res', res);
-    });
-  },
 
   methods: {
-    initCanvas: function initCanvas() {
-      var _this = this;
+    saveCanvas: function saveCanvas() {
+      var _this2 = this;
 
-      var ctx = wx.createCanvasContext('my-ctx');
-      ctx.setFontSize(this.size.normal);
-      ctx.rect(0, 0, this.winWh, this.winHe);
-      ctx.setFillStyle('white');
-      ctx.setTextAlign('center');
-      ctx.fillText(this.origin.title, this.winWh / 2, this.line.base);
-      ctx.setFontSize(this.size.aut);
-      ctx.fillText(this.origin.author, this.winWh / 2, this.line.base + this.line.sept * 1);
-      ctx.setFontSize(this.size.normal);
-      var _list = this.origin.content.join(',').replace(/!/g, '。').split('。');
+      var qrWh = 60;
+      var qrHe = 60;
+      this.ctx = wx.createCanvasContext('my-ctx');
+      var _list = this.origin.content.join(',').replace(/!|\?|？/g, ',').split('。');
+
+      // this.winHe = (4 + _list.length) * this.line.sept
+      this.winHe = qrHe + this.line.base + this.size.normal + (1 + _list.length) * this.line.sept + this.size.aut + _list.length * this.size.normal;
+
+      this.ctx.setFillStyle('#fffbf8');
+      this.ctx.fillRect(0, 0, this.winWh, this.winHe);
+      this.ctx.setTextAlign('center');
+      this.ctx.setFontSize(this.size.aut);
+      this.ctx.setFillStyle('#a2a2a2');
+      this.ctx.setFontSize(this.size.aut);
+      this.ctx.fillText(this.userInfo.nickName + ' \u5206\u4EAB', this.winWh / 2, this.line.base / 2);
+      this.ctx.setFillStyle('#454545');
+      this.ctx.fillText(this.origin.title, this.winWh / 2, this.line.base);
+      this.ctx.setFontSize(this.size.aut);
+      this.ctx.fillText(this.origin.author, this.winWh / 2, this.line.base + this.line.sept * 1);
+      this.ctx.setFontSize(this.size.normal);
 
       _list.forEach(function (v, i) {
-        ctx.fillText(v.replace(/,/g, ''), _this.winWh / 2, _this.line.base + _this.line.sept * (i + 2));
-        console.log(v);
+        _this2.ctx.fillText(v.replace(/,/g, ''), _this2.winWh / 2, _this2.line.base + _this2.line.sept * (i + 2));
       });
-      this.winHe = (4 + _list.length) * this.line.sept;
 
-      ctx.draw(false, function () {
+      this.ctx.drawImage(__WEBPACK_IMPORTED_MODULE_1__asset_img_minQr_jpg___default.a, this.winWh / 2 - qrWh / 2, this.winHe - 120, qrWh, qrHe);
+      this.ctx.setFillStyle('#a2a2a2');
+      this.ctx.setFontSize(this.size.aut);
+      this.ctx.fillText('\u6253\u5F00\u5FAE\u4FE1\u641C\u7D22 \u201C\u8BD7\u4E0E\u8BCD\u201D', this.winWh / 2, this.winHe - 40);
+
+      this.ctx.draw(false, function () {
         wx.canvasToTempFilePath({
           canvasId: 'my-ctx',
           x: 0,
           y: 0,
-          width: _this.winWh,
-          height: _this.winHe,
-          destWidth: _this.winWh * 15,
-          destHeight: _this.winHe * 15,
+          width: _this2.winWh,
+          height: _this2.winHe,
+          destWidth: _this2.winWh * 10,
+          destHeight: _this2.winHe * 10,
           fileType: 'jpg',
           quality: 1,
           success: function success(res) {
@@ -162,6 +181,40 @@ var WIN_HE = wx.getSystemInfoSync().windowHeight;
           }
         });
       });
+    },
+    initCanvas: function initCanvas() {
+      var _this3 = this;
+
+      var qrWh = 60;
+      var qrHe = 60;
+      this.ctx = wx.createCanvasContext('my-ctx');
+      var _list = this.origin.content.join(',').replace(/!|\?|？/g, ',').split('。');
+
+      // this.winHe = (4 + _list.length) * this.line.sept
+      this.winHe = qrHe + this.line.base + this.size.normal + (1 + _list.length) * this.line.sept + this.size.aut + _list.length * this.size.normal;
+
+      this.ctx.setFillStyle('#fffbf8');
+      this.ctx.fillRect(0, 0, this.winWh, this.winHe);
+      this.ctx.setTextAlign('center');
+      this.ctx.setFontSize(this.size.aut);
+      this.ctx.setFillStyle('#a2a2a2');
+      this.ctx.setFontSize(this.size.aut);
+      this.ctx.fillText(this.userInfo.nickName + ' \u5206\u4EAB', this.winWh / 2, this.line.base / 2);
+      this.ctx.setFillStyle('#454545');
+      this.ctx.fillText(this.origin.title, this.winWh / 2, this.line.base);
+      this.ctx.setFontSize(this.size.aut);
+      this.ctx.fillText(this.origin.author, this.winWh / 2, this.line.base + this.line.sept * 1);
+      this.ctx.setFontSize(this.size.normal);
+
+      _list.forEach(function (v, i) {
+        _this3.ctx.fillText(v.replace(/,/g, ''), _this3.winWh / 2, _this3.line.base + _this3.line.sept * (i + 2));
+      });
+
+      this.ctx.drawImage(__WEBPACK_IMPORTED_MODULE_1__asset_img_minQr_jpg___default.a, this.winWh / 2 - qrWh / 2, this.winHe - 120, qrWh, qrHe);
+      this.ctx.setFillStyle('#a2a2a2');
+      this.ctx.setFontSize(this.size.aut);
+      this.ctx.fillText('\u6253\u5F00\u5FAE\u4FE1\u641C\u7D22 \u201C\u8BD7\u4E0E\u8BCD\u201D', this.winWh / 2, this.winHe - 40);
+      this.ctx.draw();
     }
   }
 });
@@ -183,7 +236,7 @@ var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._sel
     attrs: {
       "canvas-id": "my-ctx"
     }
-  }), _vm._v(" "), _c('div', [_vm._v("保存")])])
+  })])
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -195,6 +248,13 @@ if (false) {
      require("vue-loader/node_modules/vue-hot-reload-api").rerender("data-v-459c784b", esExports)
   }
 }
+
+/***/ }),
+
+/***/ 173:
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "img/minQr.jpg";
 
 /***/ }),
 
@@ -313,6 +373,22 @@ if (false) {(function () {
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 
@@ -331,6 +407,12 @@ if (false) {(function () {
     wx.setNavigationBarTitle({
       title: _this.origin.title + '-' + _this.origin.author
     });
+  },
+
+  methods: {
+    saveFile: function saveFile() {
+      this.$bus.$emit('save-ctx');
+    }
   }
 });
 
@@ -341,16 +423,17 @@ if (false) {(function () {
 
 "use strict";
 var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('div', [_c('button', {
+  return _c('div', [_c('div', {
+    staticClass: "iconfont share icon-fenxiang",
     attrs: {
       "eventid": '0'
     },
     on: {
       "click": function($event) {
-        _vm.isShare = !_vm.isShare
+        _vm.isShare = true
       }
     }
-  }, [_vm._v("点击")]), _vm._v(" "), (!_vm.isShare) ? _c('div', {
+  }), _vm._v(" "), (!_vm.isShare) ? _c('div', {
     staticClass: "wrapper"
   }, [_c('div', {
     staticClass: "title"
@@ -364,12 +447,29 @@ var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._sel
     return _c('div', {
       key: index
     }, [_vm._v(_vm._s(its))])
-  }))]) : _c('div', [_c('share-img', {
+  }))]) : _vm._e(), _vm._v(" "), _c('van-dialog', {
+    attrs: {
+      "use-slot": "",
+      "title": "分享",
+      "show": _vm.isShare,
+      "show-cancel-button": "",
+      "eventid": '1',
+      "mpcomid": '1'
+    },
+    on: {
+      "close": function($event) {
+        _vm.isShare = false
+      },
+      "confirm": _vm.saveFile
+    }
+  }, [_c('div', {
+    staticClass: "ctx-box"
+  }, [_c('share-img', {
     attrs: {
       "origin": _vm.origin,
       "mpcomid": '0'
     }
-  })], 1)], 1)
+  })], 1)])], 1)
 }
 var staticRenderFns = []
 render._withStripped = true

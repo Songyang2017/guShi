@@ -1,6 +1,11 @@
 <template>
   <div>
-    <button @click="isShare =!isShare">点击</button>
+    <!-- <button @click="isShare =!isShare">点击</button>
+     -->
+    <div
+      @click="isShare = true"
+      class="iconfont share icon-fenxiang"
+    ></div>
     <div
       class="wrapper"
       v-if="!isShare"
@@ -21,10 +26,21 @@
         >{{its}}</div>
       </div>
     </div>
-    <div v-else>
+    <!-- <div v-else>
       <share-img :origin="origin"></share-img>
-
-    </div>
+    </div> -->
+    <van-dialog
+      use-slot
+      title="分享"
+      :show="isShare"
+      show-cancel-button
+      @close="isShare = false"
+      @confirm="saveFile"
+    >
+      <div class="ctx-box">
+        <share-img :origin="origin"></share-img>
+      </div>
+    </van-dialog>
   </div>
 </template>
 <script>
@@ -46,6 +62,11 @@ export default {
     wx.setNavigationBarTitle({
       title: `${_this.origin.title}-${_this.origin.author}`
     })
+  },
+  methods: {
+    saveFile () {
+      this.$bus.$emit('save-ctx')
+    }
   }
 }
 </script>
@@ -63,5 +84,17 @@ export default {
   .con {
     line-height: 30px;
   }
+}
+.share {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 30px;
+  color: #a2a2a2;
+}
+.ctx-box {
+  padding: 20px 0;
+  height: 300px;
+  overflow: auto;
 }
 </style>

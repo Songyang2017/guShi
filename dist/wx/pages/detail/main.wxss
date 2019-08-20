@@ -1,3 +1,4 @@
+@import "../../common/vendor.wxss";
 
 .wrapper.data-v-1d936461 {
   padding: 60rpx 40rpx;
@@ -12,6 +13,18 @@
 }
 .wrapper .con.data-v-1d936461 {
   line-height: 60rpx;
+}
+.share.data-v-1d936461 {
+  position: absolute;
+  top: 20rpx;
+  right: 20rpx;
+  font-size: 60rpx;
+  color: #a2a2a2;
+}
+.ctx-box.data-v-1d936461 {
+  padding: 40rpx 0;
+  height: 600rpx;
+  overflow: auto;
 }
 .canvas-box ._canvas.data-v-459c784b {
   margin: auto;

@@ -1,3 +1,4 @@
+@import "../../common/vendor.wxss";
 
 .list-wrapper.data-v-db48e2fe {
   display: grid;

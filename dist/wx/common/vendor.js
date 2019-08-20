@@ -8034,7 +8034,12 @@ exports.f = {}.propertyIsEnumerable;
 
 
 /***/ }),
-/* 67 */,
+/* 67 */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
 /* 68 */,
 /* 69 */,
 /* 70 */,
@@ -9829,54 +9834,7 @@ exports.default = function (fn) {
 };
 
 /***/ }),
-/* 137 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return getDataList; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return getImageinfo; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_babel_runtime_core_js_promise__ = __webpack_require__(25);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_babel_runtime_core_js_promise___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_babel_runtime_core_js_promise__);
-
-
-/**
- *
- * @param {*} pageSize 分页数据
- * @param {*} pageNo 页码
- * @param {*} name 集合名字
- * @param {*} queryObj 查询条件
- */
-var getDataList = function getDataList(pageSize, pageNo, name, queryObj) {
-  return new __WEBPACK_IMPORTED_MODULE_0_babel_runtime_core_js_promise___default.a(function (resolve, reject) {
-    wx.cloud.callFunction({
-      name: 'pages',
-      data: {
-        pageSize: pageSize,
-        pageNo: pageNo,
-        name: name,
-        queryObj: queryObj
-      },
-      success: function success(res) {
-        resolve(res.result);
-      },
-      fail: function fail(err) {
-        reject(err);
-      }
-    });
-  });
-};
-
-var getImageinfo = function getImageinfo(url) {
-  return new __WEBPACK_IMPORTED_MODULE_0_babel_runtime_core_js_promise___default.a(function (resolve, reject) {
-    wx.getImageinfo({
-      url: url,
-      success: resolve,
-      file: reject
-    });
-  });
-};
-
-/***/ }),
+/* 137 */,
 /* 138 */,
 /* 139 */,
 /* 140 */,

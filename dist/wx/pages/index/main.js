@@ -19,7 +19,6 @@ __WEBPACK_IMPORTED_MODULE_0_vue___default.a.config.errorHandler = function (err)
     console.error(err);
   }
 };
-
 var app = new __WEBPACK_IMPORTED_MODULE_0_vue___default.a(__WEBPACK_IMPORTED_MODULE_1__index__["a" /* default */]);
 app.$mount();
 

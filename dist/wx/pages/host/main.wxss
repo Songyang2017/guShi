@@ -1,3 +1,4 @@
+@import "../../common/vendor.wxss";
 
 .avatar-wrapper.data-v-95466b90 {
   display: flex;

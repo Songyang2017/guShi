@@ -19,6 +19,7 @@ __WEBPACK_IMPORTED_MODULE_0_vue___default.a.config.productionTip = false;
 __WEBPACK_IMPORTED_MODULE_1__App__["a" /* default */].mpType = 'app';
 __WEBPACK_IMPORTED_MODULE_0_vue___default.a.prototype.$store = __WEBPACK_IMPORTED_MODULE_2__store_index__["a" /* default */];
 
+__WEBPACK_IMPORTED_MODULE_0_vue___default.a.prototype.$bus = new __WEBPACK_IMPORTED_MODULE_0_vue___default.a();
 // 初始化数据库
 wx.cloud.init({
   env: 'shcii-077f0e',
@@ -94,6 +95,9 @@ if (false) {(function () {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__asset_icon_iconfont_css__ = __webpack_require__(67);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__asset_icon_iconfont_css___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__asset_icon_iconfont_css__);
+
 
 /* harmony default export */ __webpack_exports__["a"] = ({
   created: function created() {

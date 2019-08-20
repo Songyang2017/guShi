@@ -1,3 +1,4 @@
+@import "../../common/vendor.wxss";
 
 .wrapper.data-v-14667ed0 {
   width: 100vw;

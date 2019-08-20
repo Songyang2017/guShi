@@ -267,6 +267,55 @@ var PAGE_SIZE = 10;
 
 /***/ }),
 
+/***/ 137:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return getDataList; });
+/* unused harmony export getImageinfo */
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_babel_runtime_core_js_promise__ = __webpack_require__(25);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_babel_runtime_core_js_promise___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_babel_runtime_core_js_promise__);
+
+
+/**
+ *
+ * @param {*} pageSize 分页数据
+ * @param {*} pageNo 页码
+ * @param {*} name 集合名字
+ * @param {*} queryObj 查询条件
+ */
+var getDataList = function getDataList(pageSize, pageNo, name, queryObj) {
+  return new __WEBPACK_IMPORTED_MODULE_0_babel_runtime_core_js_promise___default.a(function (resolve, reject) {
+    wx.cloud.callFunction({
+      name: 'pages',
+      data: {
+        pageSize: pageSize,
+        pageNo: pageNo,
+        name: name,
+        queryObj: queryObj
+      },
+      success: function success(res) {
+        resolve(res.result);
+      },
+      fail: function fail(err) {
+        reject(err);
+      }
+    });
+  });
+};
+
+var getImageinfo = function getImageinfo(url) {
+  return new __WEBPACK_IMPORTED_MODULE_0_babel_runtime_core_js_promise___default.a(function (resolve, reject) {
+    wx.getImageinfo({
+      url: url,
+      success: resolve,
+      file: reject
+    });
+  });
+};
+
+/***/ }),
+
 /***/ 138:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
