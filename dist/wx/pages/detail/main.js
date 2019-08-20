@@ -450,7 +450,7 @@ var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._sel
   }))]) : _vm._e(), _vm._v(" "), _c('van-dialog', {
     attrs: {
       "use-slot": "",
-      "title": "分享",
+      "title": "保存图片并分享",
       "show": _vm.isShare,
       "show-cancel-button": "",
       "eventid": '1',

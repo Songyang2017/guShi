@@ -9,7 +9,7 @@
         <view wx:key="index" key="{{index}}" wx:for="{{origin.content}}" wx:for-index="index" wx:for-item="its" class="_div data-v-1d936461">{{its}}</view>
       </view>
     </view>
-    <van-dialog use-slot title="分享" show="{{isShare}}" show-cancel-button bindclose="handleProxy" bindconfirm="handleProxy" data-eventid="{{'1'}}" data-comkey="{{$k}}" class="_van-dialog data-v-1d936461">
+    <van-dialog use-slot title="保存图片并分享" show="{{isShare}}" show-cancel-button bindclose="handleProxy" bindconfirm="handleProxy" data-eventid="{{'1'}}" data-comkey="{{$k}}" class="_van-dialog data-v-1d936461">
       <view class="_div data-v-1d936461 ctx-box"><template data="{{...$root[$kk+'0'], $root}}" is="2cd18466"></template></view>
     </van-dialog>
   </view>

@@ -31,7 +31,7 @@
     </div> -->
     <van-dialog
       use-slot
-      title="分享"
+      title="保存图片并分享"
       :show="isShare"
       show-cancel-button
       @close="isShare = false"
